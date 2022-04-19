@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "listadoreordenable-c7cb6"
+  },
+  "targets": {
+    "listadoreordenable-c7cb6": {
+      "hosting": {
+        "listado-reordenable": [
+          "listadoreordenable-c7cb6"
+        ]
+      }
+    }
+  }
+}

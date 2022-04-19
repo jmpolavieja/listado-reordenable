@@ -6,6 +6,42 @@
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="manifest" href="./manifest.json">
+  <!-- Voy a probar con l a solución que da https://stackoverflow.com/questions/61276173/failed-to-register-a-serviceworker-for-scope-https-xxx-net-firebase-cloud-m
+  <script>
+    if ("serviceWorker" in navigator) {
+      navigator.serviceWorker
+      .register("./firebase-messaging-sw.js")
+      .then(function(registration) {
+        console.log("Registration succesful, scope is: ",registration.scope);
+        messaging.getToken({vapidKey : environment.firebase.vapidKey, ServiceWorkerRegistration: registration })
+        .then((currentToken) => {
+          if (currentToken) {
+            console.log('current token for client: ', currentToken);
+          } else {
+            console.log('No registration token available. REquest permission to generate one.');
+          }
+        }).catch((err) => {
+          console.log('An error occurred while retrieving token. ', err);
+        });
+      })
+      .catch(function(err) {
+        console.log("Service worker registration failed, error: ", err);
+      })
+    }
+  </script>-->
+  <script>
+    if ("serviceWorker" in navigator) {
+      navigator.serviceWorker.register("./firebase-messaging-sw.js")
+        .then(() => console.log("¡SW registrado correctamente!"))
+        .catch((err) => {
+          console.log("¡Error al registrar el SW!", err);
+        });
+    }
+  </script>
 </head>
 <body>
   <app-root></app-root>

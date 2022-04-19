@@ -1,0 +1,13 @@
+<div
+  class="list-group-item pointer"
+  (click)="completeItem()"
+  [ngClass]="item.completed ? 'active' : ''"
+  style="display: flex; align-items: center;"
+  >
+  <img [src]="item['img']"
+  width="32"
+  style="margin-right: 4px; border-radius: 50%"
+  alt="👨‍🎓">
+  {{ item.text }}
+
+</div>
