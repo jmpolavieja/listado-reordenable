@@ -1,0 +1,10 @@
+<div class="example-boundary">
+  <div class="example-box" cdkDragBoundary=".example-boundary" cdkDrag>
+    <img [src]="actualFile" class="w-100 h-100">
+  </div>
+</div>
+<div class="mb-3">
+  <!-- <label for="formFileSm" class="form-label">Small file input example</label> -->
+  <input class="form-control form-control-sm" type="file" (change)="fileHandler($event)">
+  <button class="btn btn-success" type="button" (click)="uploadImg()">Subir imagen</button>
+</div>

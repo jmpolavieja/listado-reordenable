@@ -8,8 +8,9 @@ export class StorageService {
 
   constructor(private storage: AngularFireStorage) { }
 
-  public getImage() {
-    return this.storage.ref('images/hombre1.jpg').getDownloadURL();
+  // Transformación para recibir la imagen que le paso por argumento
+  public getImage(img: string) {
+    return this.storage.ref(img).getDownloadURL();
   }
   public createImage(path: string, file: any, metadata?: any) {
     return this.storage.upload(path, file, {customMetadata: metadata});
@@ -20,7 +21,7 @@ export class StorageService {
     .then(() => this.createImage(path, newFile, metadata))
     .catch(() => `No se ha podido eliminar el fichero ${path}`);
   }
-  
+
   public deleteImage(path: string) {
     console.log('El path es ', path);
     return this.storage.ref(path).delete();

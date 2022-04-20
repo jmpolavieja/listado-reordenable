@@ -14,10 +14,14 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
 import { environment } from '../environments/environment';
 
 import { FormsModule } from '@angular/forms';
+import { DragdropComponent } from './components/dragdrop/dragdrop.component';
+
+
 @NgModule({
   declarations: [
     AppComponent,
     ItemComponent,
+    DragdropComponent,
   ],
   imports: [
     BrowserModule,
@@ -25,7 +29,8 @@ import { FormsModule } from '@angular/forms';
     FormsModule,
     DragDropModule,
     AngularFireModule.initializeApp(environment.firebase),
-    AngularFirestoreModule
+    AngularFirestoreModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]

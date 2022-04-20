@@ -1,5 +1,8 @@
 import { Injectable } from '@angular/core';
 import firebase from 'firebase/compat/app';
+import 'firebase/compat/messaging';
+// Añadir esta línea (la 3) y la versión compat en todas las importaciones, incluidas las de
+// firebase-messaging-sw ha sido necesario para poder poner en funcionamiento el programa
 import { Observable } from 'rxjs';
 
 @Injectable({

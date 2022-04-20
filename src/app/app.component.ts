@@ -30,6 +30,10 @@ export class AppComponent implements OnInit {
       .subscribe((tareas: Item[]) => (this.itemList = tareas));
     //this.storage.deleteImage(this.path);
     //this.storage.updateImage('images/hombre1.jpg','');
+    this.messaging.getMessages().subscribe((message) => {
+      const { notification } = message;
+      console.log(notification);
+    });
   }
   drop(event: CdkDragDrop<string[]>) {
     moveItemInArray(this.itemList, event.previousIndex, event.currentIndex);
